@@ -49,11 +49,3 @@ I hold a range of certifications that underscore my proficiency and dedication t
 ---
 
 I am always open to discussing technology and innovations. If you want to collaborate or just connect, feel free to reach out!
-
-![Badge](./images/AWS_CloudPractitioner.png)
-![Badge](./images/AWS-SA.png)
-![Badge](./images/azure-administrator-associate-600x600.png)
-![Badge](./images/azure-solutions-architect-expert-600x600.png)
-![Badge](./images/MCSE_Cloud_Platform_and_Infrastructure-01.png)
-![Badge](./images/MCT-24.png)
-![Badge](./images/vmware_cert_VCPDCV2019.png)
