@@ -2,7 +2,7 @@
 
 ## About Me
 
-Hello there! I'm Ivan, a passionate professional with over 14 years of expertise in cloud technology and network infrastructures. My technical journey encompasses extensive work with network and cloud operations, including configuration, scalability, and troubleshooting. 
+Hello there! I'm Ivan, a passionate professional with over 15 years of expertise in cloud technology and network infrastructures. My technical journey encompasses extensive work with network and cloud operations, including configuration, scalability, and troubleshooting. 
 
 I have the certified **AWS Solutions Architect** and **Azure Solutions Architect Expert**. My technical portfolio includes the design, implementation, and maintenance of scalable, highly available infrastructure services using AWS and Azure platforms.
 
