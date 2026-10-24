@@ -130,9 +130,9 @@ const CERT_GROUPS = [
 ];
 
 const FEATURED_CERTS = [
-    { vendor: 'AWS', name: 'Solutions Architect – Professional', note: 'certs.featured.aws' },
-    { vendor: 'Microsoft', name: 'Azure Solutions Architect Expert', note: 'certs.featured.azure' },
-    { vendor: 'Linux Foundation', name: 'Kubernetes and Cloud Native Associate', note: 'certs.featured.kcna' },
+    { vendor: 'AWS', name: 'Solutions Architect – Professional', note: 'certs.featured.aws', badge: 'assets/badges/aws-sa-pro.png' },
+    { vendor: 'Microsoft', name: 'Azure Solutions Architect Expert', note: 'certs.featured.azure', badge: 'assets/badges/azure-sa-expert.png' },
+    { vendor: 'Linux Foundation', name: 'Kubernetes and Cloud Native Associate', note: 'certs.featured.kcna', badge: 'assets/badges/kcna.png' },
 ];
 
 const CERT_COUNT = CERT_GROUPS.reduce((n, g) => n + g.certs.length, 0);
@@ -174,9 +174,12 @@ const render = () => {
 
     html('cert-featured', FEATURED_CERTS.map((c) => `
         <article class="cert-card reveal">
-            <span class="cert-vendor">${c.vendor}</span>
-            <h3 class="cert-name">${c.name}</h3>
-            <p>${t(c.note)}</p>
+            <img class="cert-badge" src="${c.badge}" alt="${c.vendor} ${c.name} badge" width="84" height="84" loading="lazy">
+            <div>
+                <span class="cert-vendor">${c.vendor}</span>
+                <h3 class="cert-name">${c.name}</h3>
+                <p>${t(c.note)}</p>
+            </div>
         </article>`).join(''));
 
     html('cert-groups', CERT_GROUPS.map((g) => `
@@ -240,6 +243,34 @@ function observeReveals() {
     document.querySelectorAll('.reveal:not(.visible)').forEach((el) => revealObserver.observe(el));
 }
 
+// ========== COUNT-UP ==========
+const countObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        countObserver.unobserve(entry.target);
+        const el = entry.target;
+        const target = Number(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        const start = performance.now();
+        const DURATION = 1400;
+        const step = (now) => {
+            const p = Math.min(1, (now - start) / DURATION);
+            const eased = 1 - (1 - p) ** 3;
+            el.textContent = `${Math.round(target * eased)}${suffix}`;
+            if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    });
+}, { threshold: 0.5 });
+
 // ========== INIT ==========
-if (reducedMotion) document.getElementById('hero-diagram').pauseAnimations();
+document.getElementById('cert-count').dataset.count = CERT_COUNT;
+if (reducedMotion) {
+    document.getElementById('hero-diagram').pauseAnimations();
+} else {
+    document.querySelectorAll('[data-count]').forEach((el) => {
+        el.textContent = `0${el.dataset.suffix || ''}`;
+        countObserver.observe(el);
+    });
+}
 setLang(lang);
