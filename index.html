@@ -60,63 +60,83 @@
                 <a href="#about" class="btn btn-ghost"><span data-i18n="hero.cta"></span> ↓</a>
             </div>
 
-            <!-- Reference HA architecture: edge → load balancer → 2 AZs (app, cache, db) -->
             <figure class="hero-visual">
-                <svg class="hero-diagram" id="hero-diagram" viewBox="0 0 480 660" aria-hidden="true">
+                <!-- Reference architecture: edge → load balancer → 2 AZs (app, db) → AI platform (LLM gateway, RAG, agents) -->
+                <svg class="hero-diagram" id="hero-diagram" viewBox="0 0 480 690" aria-hidden="true">
                     <defs>
-                        <path id="route-a" d="M240 33 V193 L135 300 V500" />
-                        <path id="route-b" d="M240 33 V193 L345 300 V500" />
+                        <linearGradient id="node-fill" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#16202b" />
+                            <stop offset="1" stop-color="#0e151d" />
+                        </linearGradient>
+                        <linearGradient id="ai-fill" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#18223a" />
+                            <stop offset="1" stop-color="#0f1626" />
+                        </linearGradient>
+                        <path id="route-db-a" d="M240 30 V162 L134 282 V386" />
+                        <path id="route-db-b" d="M240 30 V162 L346 282 V386" />
+                        <path id="route-ai-a" d="M240 30 V162 L134 282 H240 V530 L130 620" />
+                        <path id="route-ai-b" d="M240 30 V162 L346 282 H240 V530 L350 620" />
                     </defs>
+
                     <g class="d-zone">
-                        <rect x="20" y="150" width="440" height="470" rx="14" />
-                        <rect x="40" y="250" width="190" height="350" rx="10" />
-                        <rect x="250" y="250" width="190" height="350" rx="10" />
+                        <rect x="20" y="200" width="440" height="252" rx="16" />
+                        <rect x="36" y="228" width="190" height="206" rx="12" />
+                        <rect x="254" y="228" width="190" height="206" rx="12" />
                     </g>
+                    <rect class="d-zone-ai" x="20" y="478" width="440" height="196" rx="16" />
                     <g class="d-zone-label">
-                        <text x="36" y="172">vpc</text>
-                        <text x="56" y="272">az-a</text>
-                        <text x="266" y="272">az-b</text>
+                        <text x="36" y="220">vpc</text>
+                        <text x="50" y="248">az-a</text>
+                        <text x="268" y="248">az-b</text>
                     </g>
+                    <text class="d-zone-label-ai" x="36" y="500">ai platform</text>
+
                     <g class="d-link">
-                        <use href="#route-a" />
-                        <use href="#route-b" />
-                        <path d="M205 500 H275" />
+                        <path d="M240 48 V144 M240 180 L134 262 M240 180 L346 262 M134 302 V366 M346 302 V366" />
+                        <path class="d-sync" d="M208 386 H272" />
                     </g>
+                    <g class="d-link d-link-ai">
+                        <path d="M208 282 H272 M240 282 V510 M200 550 L130 600 M280 550 L350 600" />
+                    </g>
+
                     <g class="d-packets">
-                        <circle r="3.5"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#route-a" /></animateMotion></circle>
-                        <circle r="3.5"><animateMotion dur="3.2s" begin="-1.6s" repeatCount="indefinite"><mpath href="#route-b" /></animateMotion></circle>
-                        <circle r="3.5"><animateMotion dur="3.2s" begin="-0.8s" repeatCount="indefinite"><mpath href="#route-b" /></animateMotion></circle>
-                        <circle r="3.5"><animateMotion dur="3.2s" begin="-2.4s" repeatCount="indefinite"><mpath href="#route-a" /></animateMotion></circle>
+                        <circle r="3.5"><animateMotion dur="3.4s" repeatCount="indefinite"><mpath href="#route-db-a" /></animateMotion></circle>
+                        <circle r="3.5"><animateMotion dur="3.4s" begin="-1.7s" repeatCount="indefinite"><mpath href="#route-db-b" /></animateMotion></circle>
+                        <circle class="ai" r="3.5"><animateMotion dur="4.2s" begin="-0.9s" repeatCount="indefinite"><mpath href="#route-ai-a" /></animateMotion></circle>
+                        <circle class="ai" r="3.5"><animateMotion dur="4.2s" begin="-3s" repeatCount="indefinite"><mpath href="#route-ai-b" /></animateMotion></circle>
                     </g>
+
                     <g class="d-node">
-                        <rect x="180" y="15" width="120" height="36" rx="10" />
-                        <rect x="150" y="85" width="180" height="36" rx="10" />
-                        <rect x="160" y="175" width="160" height="36" rx="10" />
-                        <rect x="65" y="280" width="140" height="40" rx="10" />
-                        <rect x="275" y="280" width="140" height="40" rx="10" />
-                        <rect x="65" y="380" width="140" height="40" rx="10" />
-                        <rect x="275" y="380" width="140" height="40" rx="10" />
-                        <rect x="65" y="480" width="140" height="40" rx="10" />
-                        <rect x="275" y="480" width="140" height="40" rx="10" />
+                        <rect class="hot" x="180" y="12" width="120" height="36" rx="18" />
+                        <rect x="150" y="78" width="180" height="36" rx="10" />
+                        <rect x="160" y="144" width="160" height="36" rx="10" />
+                        <rect x="60" y="262" width="148" height="40" rx="10" />
+                        <rect x="272" y="262" width="148" height="40" rx="10" />
+                        <rect x="60" y="366" width="148" height="40" rx="10" />
+                        <rect x="272" y="366" width="148" height="40" rx="10" />
                     </g>
+                    <g class="d-node d-node-ai">
+                        <rect class="hot" x="150" y="510" width="180" height="40" rx="10" />
+                        <rect x="40" y="600" width="180" height="40" rx="10" />
+                        <rect x="260" y="600" width="180" height="40" rx="10" />
+                    </g>
+
                     <g class="d-label">
-                        <text x="240" y="37">users</text>
-                        <text x="240" y="107">dns · cdn · waf</text>
-                        <text x="240" y="197">load balancer</text>
-                        <text x="135" y="304">app · k8s</text>
-                        <text x="345" y="304">app · k8s</text>
-                        <text x="135" y="404">cache</text>
-                        <text x="345" y="404">cache</text>
-                        <text x="135" y="504">db primary</text>
-                        <text x="345" y="504">db replica</text>
+                        <text x="240" y="34">users</text>
+                        <text x="240" y="100">dns · cdn · waf</text>
+                        <text x="240" y="166">load balancer</text>
+                        <text x="134" y="286">app · k8s</text>
+                        <text x="346" y="286">app · k8s</text>
+                        <text x="134" y="390">db primary</text>
+                        <text x="346" y="390">db replica</text>
+                        <text x="240" y="534">llm gateway</text>
+                        <text x="130" y="624">rag · vector db</text>
+                        <text x="350" y="624">agents · mcp</text>
                     </g>
                     <g class="d-zone-label">
-                        <text x="240" y="492" text-anchor="middle">sync</text>
-                        <text x="56" y="588">auto scaling</text>
-                        <text x="266" y="588">auto scaling</text>
+                        <text x="240" y="378" text-anchor="middle">sync</text>
                     </g>
                 </svg>
-                <figcaption data-i18n="hero.caption"></figcaption>
             </figure>
         </header>
 

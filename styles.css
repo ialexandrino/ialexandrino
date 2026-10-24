@@ -318,24 +318,28 @@ strong {
     font-family: ui-monospace, 'SF Mono', Consolas, monospace;
 }
 
-.hero-visual figcaption {
-    margin-top: 0.75rem;
-    text-align: center;
-    font-size: 0.8rem;
-    color: var(--ink-dim);
-}
-
 .d-zone rect {
     fill: rgba(255, 255, 255, 0.015);
     stroke: var(--line);
 }
 
-.d-zone-label text {
-    fill: var(--ink-dim);
-    font-size: 11px;
+.d-zone-ai {
+    fill: rgba(91, 140, 255, 0.05);
+    stroke: rgba(91, 140, 255, 0.35);
+    stroke-dasharray: 5 5;
 }
 
-.d-link use,
+.d-zone-label text,
+.d-zone-label-ai {
+    fill: var(--ink-dim);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+}
+
+.d-zone-label-ai {
+    fill: var(--accent-2);
+}
+
 .d-link path {
     fill: none;
     stroke: var(--accent);
@@ -343,14 +347,43 @@ strong {
     stroke-width: 1.2;
 }
 
+.d-link .d-sync {
+    stroke-dasharray: 2 4;
+}
+
+.d-link-ai path {
+    stroke: var(--accent-2);
+    stroke-opacity: 0.45;
+}
+
 .d-packets circle {
     fill: var(--accent);
     filter: drop-shadow(0 0 5px var(--accent));
 }
 
+.d-packets circle.ai {
+    fill: var(--accent-2);
+    filter: drop-shadow(0 0 5px var(--accent-2));
+}
+
 .d-node rect {
-    fill: var(--bg-card);
-    stroke: rgba(61, 214, 208, 0.45);
+    fill: url(#node-fill);
+    stroke: rgba(61, 214, 208, 0.35);
+}
+
+.d-node rect.hot {
+    stroke: rgba(61, 214, 208, 0.8);
+    filter: drop-shadow(0 0 8px rgba(61, 214, 208, 0.35));
+}
+
+.d-node-ai rect {
+    fill: url(#ai-fill);
+    stroke: rgba(91, 140, 255, 0.45);
+}
+
+.d-node-ai rect.hot {
+    stroke: rgba(91, 140, 255, 0.9);
+    filter: drop-shadow(0 0 10px rgba(91, 140, 255, 0.45));
 }
 
 .d-label text {
