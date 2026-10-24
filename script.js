@@ -2,34 +2,39 @@
 const I18N = {
     en: {
         'nav.about': 'About',
+        'nav.exp': 'Experience',
         'nav.stack': 'Stack',
         'nav.certs': 'Certifications',
         'nav.connect': 'Contact',
         'hero.label': '// solutions architect · cloud & infrastructure',
         'hero.tagline': 'I design cloud infrastructure that stays up.',
-        'hero.description': '15+ years taking systems from on-prem networks to AWS and Azure — designed to scale, automated with Terraform, and monitored before anything breaks.',
-        'hero.ctaStack': 'See my stack',
+        'hero.description': '15 years in technology, the last 6 architecting business-critical financial platforms at Itaú and Bradesco — cloud-native on AWS and Azure, automated end to end and built to stay up.',
+        'hero.ctaStack': 'See my experience',
         'hero.ctaContact': 'Get in touch',
-        'stats.years': 'Years in infra',
+        'stats.years': 'Years in tech',
         'stats.certs': 'Certifications',
         'stats.clouds': 'Clouds · AWS + Azure',
         'about.title': 'About <span>me</span>',
-        'about.p1': 'I\'ve spent 15 years on the layer everything else depends on — <strong>networks, servers, and now cloud platforms</strong>. I started in routing, switching and datacenter operations, and moved with the industry to the cloud.',
-        'about.p2': 'Today I design and run <strong>highly available infrastructure on AWS and Azure</strong>, automate it end to end, and teach it too, as a <strong>Microsoft Certified Trainer</strong>. I work best in teams that value clear communication and shared ownership.',
+        'about.p1': 'I started in 2010 on the datacenter floor — configuring servers and fixing Active Directory at 2 a.m. From there I moved through <strong>Microsoft infrastructure, cloud consulting and SRE</strong>, always on the layer everything else depends on.',
+        'about.p2': 'Today I\'m a <strong>Senior Solutions Architect at Bradesco</strong>, after nearly 6 years at Itaú. I set architecture standards, drive decisions across engineering, product and business, and <strong>mentor engineers</strong> along the way — because I know their work from the inside.',
         'about.h1k': 'Multi-cloud',
         'about.h1t': 'AWS Solutions Architect Pro & Azure Solutions Architect Expert',
-        'about.h2k': 'Network roots',
-        'about.h2t': 'Routing, switching and troubleshooting from the ground up',
-        'about.h3k': 'Educator',
-        'about.h3t': 'Microsoft Certified Trainer (MCT)',
+        'about.h2k': 'Financial services',
+        'about.h2t': 'Itaú (Business Banking, Acquiring) · Bradesco (Auto Finance)',
+        'about.h3k': 'Leadership',
+        'about.h3t': 'Mentoring & development plans · Management 3.0 · Tech Management (FIAP)',
+        'exp.title': 'Career <span>path</span>',
+        'exp.sub': 'From the datacenter to architecture of critical banking platforms.',
+        'exp.earlier': 'Earlier: Microsoft infrastructure, System Center and virtualization at Quality S.A., Algar Tech, Sompo Seguros, Ascenty and others (2010 – 2018).',
         'stack.title': 'Tech <span>stack</span>',
         'stack.sub': 'Live status of my toolbox. (Go is still starting up.)',
         'certs.title': 'Certifications',
-        'certs.sub': '{n} certifications across AWS, Microsoft, VMware and more.',
+        'certs.sub': '{n} certifications across AWS, Microsoft, Linux Foundation, VMware and more.',
         'certs.featured.aws': 'The highest-level AWS architecture certification.',
         'certs.featured.azure': 'Microsoft\'s expert-level Azure architecture certification.',
-        'certs.featured.mct': 'Certified to teach official Microsoft courses.',
+        'certs.featured.kcna': 'Kubernetes and the cloud-native ecosystem, by the Linux Foundation.',
         'certs.group.other': 'Other',
+        'certs.group.leadership': 'Leadership & Agile',
         'connect.title': 'Let\'s <span>talk</span>',
         'connect.text': 'Planning a migration, scaling an environment, or just want to talk cloud? My inbox is open.',
         'footer.built': 'Hand-built with HTML, CSS & a little JS.',
@@ -37,34 +42,39 @@ const I18N = {
     },
     pt: {
         'nav.about': 'Sobre',
+        'nav.exp': 'Experiência',
         'nav.stack': 'Stack',
         'nav.certs': 'Certificações',
         'nav.connect': 'Contato',
         'hero.label': '// arquiteto de soluções · cloud & infraestrutura',
         'hero.tagline': 'Projeto infraestrutura em nuvem que não cai.',
-        'hero.description': 'Mais de 15 anos levando sistemas de redes on-premises para AWS e Azure — projetados para escalar, automatizados com Terraform e monitorados antes que algo quebre.',
-        'hero.ctaStack': 'Ver minha stack',
+        'hero.description': '15 anos em tecnologia, os últimos 6 desenhando plataformas financeiras críticas no Itaú e no Bradesco — cloud-native em AWS e Azure, automatizadas de ponta a ponta e feitas para não cair.',
+        'hero.ctaStack': 'Ver experiência',
         'hero.ctaContact': 'Fale comigo',
-        'stats.years': 'Anos em infra',
+        'stats.years': 'Anos em tecnologia',
         'stats.certs': 'Certificações',
         'stats.clouds': 'Nuvens · AWS + Azure',
         'about.title': 'Sobre <span>mim</span>',
-        'about.p1': 'Passei 15 anos na camada da qual todo o resto depende — <strong>redes, servidores e, agora, plataformas de nuvem</strong>. Comecei com roteamento, switching e operação de datacenter, e acompanhei a indústria na migração para a nuvem.',
-        'about.p2': 'Hoje projeto e opero <strong>infraestrutura de alta disponibilidade na AWS e no Azure</strong>, automatizo tudo de ponta a ponta e também ensino, como <strong>Microsoft Certified Trainer</strong>. Rendo mais em times que valorizam comunicação clara e responsabilidade compartilhada.',
+        'about.p1': 'Comecei em 2010 no chão do datacenter — configurando servidores e resolvendo Active Directory às 2h da manhã. Dali passei por <strong>infraestrutura Microsoft, consultoria cloud e SRE</strong>, sempre na camada da qual todo o resto depende.',
+        'about.p2': 'Hoje sou <strong>Senior Solutions Architect no Bradesco</strong>, depois de quase 6 anos no Itaú. Defino padrões arquiteturais, conduzo decisões entre engenharia, produto e negócio e <strong>desenvolvo engenheiros</strong> no caminho — porque conheço o trabalho deles por dentro.',
         'about.h1k': 'Multi-cloud',
         'about.h1t': 'AWS Solutions Architect Pro & Azure Solutions Architect Expert',
-        'about.h2k': 'Raiz em redes',
-        'about.h2t': 'Roteamento, switching e troubleshooting desde a base',
-        'about.h3k': 'Instrutor',
-        'about.h3t': 'Microsoft Certified Trainer (MCT)',
+        'about.h2k': 'Setor financeiro',
+        'about.h2t': 'Itaú (Pessoa Jurídica, Adquirência) · Bradesco (Financiamento de Veículos)',
+        'about.h3k': 'Liderança',
+        'about.h3t': 'Mentorias e PDIs · Management 3.0 · Pós em Tech Management (FIAP)',
+        'exp.title': 'Trajetória <span>profissional</span>',
+        'exp.sub': 'Do datacenter à arquitetura de plataformas bancárias críticas.',
+        'exp.earlier': 'Antes: infraestrutura Microsoft, System Center e virtualização na Quality S.A., Algar Tech, Sompo Seguros, Ascenty e outras (2010 – 2018).',
         'stack.title': 'Stack <span>técnica</span>',
         'stack.sub': 'Status ao vivo da minha caixa de ferramentas. (O Go ainda está subindo.)',
         'certs.title': 'Certificações',
-        'certs.sub': '{n} certificações em AWS, Microsoft, VMware e outras.',
+        'certs.sub': '{n} certificações em AWS, Microsoft, Linux Foundation, VMware e outras.',
         'certs.featured.aws': 'A certificação de arquitetura de mais alto nível da AWS.',
         'certs.featured.azure': 'A certificação de arquitetura Azure de nível expert da Microsoft.',
-        'certs.featured.mct': 'Certificado para ministrar os cursos oficiais da Microsoft.',
+        'certs.featured.kcna': 'Kubernetes e o ecossistema cloud-native, pela Linux Foundation.',
         'certs.group.other': 'Outras',
+        'certs.group.leadership': 'Liderança & Agilidade',
         'connect.title': 'Vamos <span>conversar</span>',
         'connect.text': 'Planejando uma migração, escalando um ambiente ou só quer falar de cloud? Estou à disposição.',
         'footer.built': 'Feito à mão com HTML, CSS e um pouco de JS.',
@@ -81,15 +91,24 @@ const SKILLS = [
     ['aws', 'vpc', '1/1', 'Running'],
     ['aws', 'auto-scaling', '1/1', 'Running'],
     ['aws', 'lambda', '1/1', 'Running'],
+    ['architecture', 'microservices', '1/1', 'Running'],
+    ['architecture', 'event-driven', '1/1', 'Running'],
+    ['architecture', 'ddd', '1/1', 'Running'],
+    ['architecture', 'c4-model', '1/1', 'Running'],
     ['containers', 'docker', '1/1', 'Running'],
     ['containers', 'kubernetes', '1/1', 'Running'],
+    ['containers', 'helm', '1/1', 'Running'],
+    ['containers', 'istio', '1/1', 'Running'],
     ['virtualization', 'vmware', '1/1', 'Running'],
     ['iac', 'terraform', '1/1', 'Running'],
     ['iac', 'ansible', '1/1', 'Running'],
+    ['ci-cd', 'github-actions', '1/1', 'Running'],
+    ['ci-cd', 'argocd', '1/1', 'Running'],
     ['ci-cd', 'jenkins', '1/1', 'Running'],
     ['observability', 'prometheus', '1/1', 'Running'],
     ['observability', 'grafana', '1/1', 'Running'],
-    ['observability', 'alertmanager', '1/1', 'Running'],
+    ['observability', 'datadog', '1/1', 'Running'],
+    ['observability', 'splunk', '1/1', 'Running'],
     ['observability', 'cloudwatch', '1/1', 'Running'],
     ['network', 'routing', '1/1', 'Running'],
     ['network', 'switching', '1/1', 'Running'],
@@ -106,12 +125,81 @@ const SKILLS = [
     ['code', 'go', '0/1', 'ContainerCreating'],
 ];
 
+const EXPERIENCE = [
+    {
+        company: 'Bradesco',
+        dates: { en: 'Dec 2025 – Present', pt: 'dez 2025 – presente' },
+        role: { en: 'Senior Solutions Architect', pt: 'Senior Solutions Architect' },
+        context: { en: 'Auto Finance', pt: 'Financiamento de Veículos' },
+        bullets: {
+            en: ['Enterprise architecture for high-complexity initiatives: microservices, APIs, integration, data and legacy modernization.',
+                'Leads Azure and AWS cloud initiatives and architecture governance across cross-functional squads.'],
+            pt: ['Arquitetura corporativa para projetos de alta complexidade: microsserviços, APIs, integração, dados e modernização de legados.',
+                'Conduz iniciativas cloud em Azure e AWS e a governança arquitetural junto a squads multidisciplinares.'],
+        },
+    },
+    {
+        company: 'Itaú Unibanco',
+        dates: { en: 'Apr 2022 – Nov 2025', pt: 'abr 2022 – nov 2025' },
+        role: { en: 'Senior Solutions Architect', pt: 'Senior Solutions Architect' },
+        context: { en: 'Business Banking · Merchant Acquiring', pt: 'Pessoa Jurídica · Adquirência' },
+        bullets: {
+            en: ['Reusable building blocks and Helm charts that cut time-to-market for new microservices by <strong>60%</strong>.',
+                'Architecture standards adopted by multiple squads; legacy modernization to event-driven with DDD and service mesh.',
+                'Mentored engineers and received the <strong>Mérito Ituber</strong> award for performance and cost reduction.'],
+            pt: ['Building blocks e Helm Charts reutilizáveis que reduziram em <strong>60%</strong> o time-to-market de novos microsserviços.',
+                'Padrões arquiteturais adotados por múltiplos squads; modernização de legados para event-driven com DDD e Service Mesh.',
+                'Mentorou engenheiros e recebeu o <strong>Mérito Ituber</strong> por performance e redução de custos.'],
+        },
+    },
+    {
+        company: 'Itaú Unibanco',
+        dates: { en: 'Jul 2020 – Apr 2022', pt: 'jul 2020 – abr 2022' },
+        role: { en: 'Senior Systems Engineer — SRE', pt: 'Senior System Engineer — SRE' },
+        context: { en: 'Microsoft platforms', pt: 'Plataformas Microsoft' },
+        bullets: {
+            en: ['Cut onboarding time by <strong>40%</strong> by automating M365, Teams, SCCM and Intune.',
+                'Incident commander for critical outages, leading root-cause analysis and preventive actions.'],
+            pt: ['Reduziu em <strong>40%</strong> o tempo de onboarding automatizando M365, Teams, SCCM e Intune.',
+                'Incident commander em crises críticas, conduzindo análise de causa raiz e ações preventivas.'],
+        },
+    },
+    {
+        company: 'V8 Consulting',
+        dates: { en: 'Nov 2018 – Jul 2020', pt: 'nov 2018 – jul 2020' },
+        role: { en: 'IT Infrastructure Specialist', pt: 'IT Infrastructure Specialist' },
+        context: { en: 'Enterprise consulting', pt: 'Consultoria enterprise' },
+        bullets: {
+            en: ['Datacenter migrations to AWS and Azure with minimal-downtime cutovers; hybrid connectivity with Direct Connect and ExpressRoute.'],
+            pt: ['Migrações de datacenters para AWS e Azure com cutovers de downtime mínimo; conectividade híbrida com Direct Connect e ExpressRoute.'],
+        },
+    },
+    {
+        company: 'F1 Tecnologia Corporativa',
+        dates: { en: 'Jan 2016 – Nov 2018', pt: 'jan 2016 – nov 2018' },
+        role: { en: 'Cloud Solutions Consultant', pt: 'Cloud Solutions Consultant' },
+        context: { en: 'Enterprise consulting', pt: 'Consultoria enterprise' },
+        bullets: {
+            en: ['Office 365 migrations, Azure IaaS adoption and System Center deployments for enterprise clients.'],
+            pt: ['Migrações para Office 365, adoção de Azure IaaS e implantação de System Center em clientes enterprise.'],
+        },
+    },
+];
+
 const CERT_GROUPS = [
     {
         vendor: 'AWS',
         certs: [
             'AWS Certified Solutions Architect – Professional',
             'AWS Certified Solutions Architect – Associate',
+            'AWS Certified Cloud Practitioner',
+        ],
+    },
+    {
+        vendor: 'Linux Foundation · GitHub',
+        certs: [
+            'KCNA: Kubernetes and Cloud Native Associate',
+            'GitHub Foundations',
         ],
     },
     {
@@ -120,6 +208,7 @@ const CERT_GROUPS = [
             'Azure Solutions Architect Expert',
             'Azure Administrator Associate',
             'Microsoft Certified Trainer (MCT)',
+            'MCSE: Cloud Platform and Infrastructure',
             'MCSE: Private Cloud',
             'MCSE: Core Infrastructure',
             'MCSA: Windows Server 2008 & 2012',
@@ -133,14 +222,21 @@ const CERT_GROUPS = [
         certs: ['VCP – Data Center Virtualization 2019'],
     },
     {
+        vendor: 'leadership',
+        certs: [
+            'Management 3.0 Foundation Workshop',
+            'DevOps Essentials Professional Certificate',
+            'Scrum Foundation Professional Certificate',
+        ],
+    },
+    {
         vendor: 'other',
         certs: [
+            'Arquitetura de Soluções Foundation — Itaú Unibanco',
             'Alibaba Cloud Fundamentals',
             'Global Certified Snow Software Administrator',
             'STS Altiris Client Management Suite 7.1',
             'STS Symantec Management Platform 7.1',
-            'DevOps Essentials Professional Certificate',
-            'Scrum Foundation Professional Certificate',
         ],
     },
 ];
@@ -148,7 +244,7 @@ const CERT_GROUPS = [
 const FEATURED_CERTS = [
     { vendor: 'AWS', name: 'Solutions Architect – Professional', note: 'certs.featured.aws' },
     { vendor: 'Microsoft', name: 'Azure Solutions Architect Expert', note: 'certs.featured.azure' },
-    { vendor: 'Microsoft', name: 'Certified Trainer (MCT)', note: 'certs.featured.mct' },
+    { vendor: 'Linux Foundation', name: 'Kubernetes and Cloud Native Associate (KCNA)', note: 'certs.featured.kcna' },
 ];
 
 const CERT_COUNT = CERT_GROUPS.reduce((n, g) => n + g.certs.length, 0);
@@ -180,9 +276,23 @@ const renderCerts = () => {
     document.getElementById('cert-groups').innerHTML = CERT_GROUPS
         .map((g) => `
             <div class="cert-group reveal visible">
-                <h3>${g.vendor === 'other' ? t('certs.group.other') : g.vendor} · ${g.certs.length}</h3>
+                <h3>${t(`certs.group.${g.vendor}`) || g.vendor} · ${g.certs.length}</h3>
                 <ul>${g.certs.map((c) => `<li>${c}</li>`).join('')}</ul>
             </div>`)
+        .join('');
+};
+
+const renderExperience = () => {
+    document.getElementById('timeline').innerHTML = EXPERIENCE
+        .map((job) => `
+            <li class="job reveal visible">
+                <div class="job-when">${job.dates[lang]}</div>
+                <div class="job-body">
+                    <h3 class="job-role">${job.role[lang]} <span class="accent">@ ${job.company}</span></h3>
+                    <p class="job-context">${job.context[lang]}</p>
+                    <ul>${job.bullets[lang].map((b) => `<li>${b}</li>`).join('')}</ul>
+                </div>
+            </li>`)
         .join('');
 };
 
@@ -199,6 +309,7 @@ const setLang = (next) => {
     });
 
     renderCerts();
+    renderExperience();
     restartTyping();
 };
 

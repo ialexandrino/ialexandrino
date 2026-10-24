@@ -518,6 +518,92 @@ main,
     font-size: 1.05rem;
 }
 
+/* ---------- EXPERIENCE ---------- */
+.timeline {
+    list-style: none;
+    position: relative;
+    border-left: 1px solid var(--border);
+    margin-left: 0.4rem;
+}
+
+.job {
+    position: relative;
+    display: grid;
+    grid-template-columns: 11rem 1fr;
+    gap: 1.5rem;
+    padding: 0 0 2.25rem 1.75rem;
+}
+
+.job::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0.45rem;
+    width: 9px;
+    height: 9px;
+    background: var(--bg);
+    border: 1px solid var(--accent);
+    transform: rotate(45deg);
+}
+
+.job:first-child::before {
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.job-when {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    padding-top: 0.2rem;
+}
+
+.job-role {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 1.35;
+}
+
+.job-context {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin: 0.2rem 0 0.6rem;
+}
+
+.job-body ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.job-body li {
+    position: relative;
+    padding-left: 1.2rem;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+
+.job-body li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.job-body strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.timeline-earlier {
+    margin: 0.5rem 0 0 2.15rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
 /* ---------- TERMINAL ---------- */
 .terminal {
     background: #070a0e;
@@ -780,6 +866,16 @@ main,
 
     .hero-stats {
         gap: 1.5rem;
+    }
+
+    .job {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+        padding-left: 1.25rem;
+    }
+
+    .timeline-earlier {
+        margin-left: 1.65rem;
     }
 
     .section {

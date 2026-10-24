@@ -1,0 +1,9 @@
+# Private documents (resumes, cover letters) — never publish
+*.docx
+*.doc
+*.pdf
+*.odt
+*.rtf
+
+# Office lock/temp files
+~$*
