@@ -2,14 +2,22 @@
 const I18N = {
     en: {
         'nav.about': 'About',
-        'nav.exp': 'Experience',
+        'nav.cases': 'Cases',
+        'nav.lead': 'Leadership',
+        'nav.exp': 'Career',
         'nav.stack': 'Stack',
-        'nav.certs': 'Certifications',
         'nav.connect': 'Contact',
+        'cases.title': 'Architecture <span>cases</span>',
+        'cases.sub': 'Decisions I\'d make again — the problem, the call, and what happened. Details kept generic out of respect for confidentiality.',
+        'case.problem': 'Problem',
+        'case.decision': 'Decision',
+        'case.result': 'Result',
+        'lead.title': 'How I <span>lead</span>',
+        'lead.sub': 'Principles I learned leading people before I had the title.',
         'hero.label': '// solutions architect · cloud & infrastructure',
         'hero.tagline': 'I design cloud infrastructure that stays up.',
         'hero.description': '15 years in technology, the last 6 architecting business-critical financial platforms at Itaú and Bradesco — cloud-native on AWS and Azure, automated end to end and built to stay up.',
-        'hero.ctaStack': 'See my experience',
+        'hero.ctaStack': 'See how I decide',
         'hero.ctaContact': 'Get in touch',
         'stats.years': 'Years in tech',
         'stats.certs': 'Certifications',
@@ -42,14 +50,22 @@ const I18N = {
     },
     pt: {
         'nav.about': 'Sobre',
-        'nav.exp': 'Experiência',
+        'nav.cases': 'Cases',
+        'nav.lead': 'Liderança',
+        'nav.exp': 'Trajetória',
         'nav.stack': 'Stack',
-        'nav.certs': 'Certificações',
         'nav.connect': 'Contato',
+        'cases.title': 'Cases de <span>arquitetura</span>',
+        'cases.sub': 'Decisões que eu tomaria de novo — o problema, a escolha e o que aconteceu. Detalhes genéricos por respeito à confidencialidade.',
+        'case.problem': 'Problema',
+        'case.decision': 'Decisão',
+        'case.result': 'Resultado',
+        'lead.title': 'Como eu <span>lidero</span>',
+        'lead.sub': 'Princípios que aprendi liderando pessoas antes de ter o título.',
         'hero.label': '// arquiteto de soluções · cloud & infraestrutura',
         'hero.tagline': 'Projeto infraestrutura em nuvem que não cai.',
         'hero.description': '15 anos em tecnologia, os últimos 6 desenhando plataformas financeiras críticas no Itaú e no Bradesco — cloud-native em AWS e Azure, automatizadas de ponta a ponta e feitas para não cair.',
-        'hero.ctaStack': 'Ver experiência',
+        'hero.ctaStack': 'Ver como eu decido',
         'hero.ctaContact': 'Fale comigo',
         'stats.years': 'Anos em tecnologia',
         'stats.certs': 'Certificações',
@@ -126,63 +142,114 @@ const SKILLS = [
 ];
 
 const EXPERIENCE = [
+    { company: 'Bradesco', dates: { en: 'Dec 2025 – Present', pt: 'dez 2025 – presente' }, role: 'Senior Solutions Architect', context: { en: 'Auto Finance', pt: 'Financiamento de Veículos' } },
+    { company: 'Itaú Unibanco', dates: { en: 'Apr 2022 – Nov 2025', pt: 'abr 2022 – nov 2025' }, role: 'Senior Solutions Architect', context: { en: 'Business Banking · Merchant Acquiring', pt: 'Pessoa Jurídica · Adquirência' } },
+    { company: 'Itaú Unibanco', dates: { en: 'Jul 2020 – Apr 2022', pt: 'jul 2020 – abr 2022' }, role: 'Senior Systems Engineer — SRE', context: { en: 'Microsoft platforms', pt: 'Plataformas Microsoft' } },
+    { company: 'V8 Consulting', dates: { en: 'Nov 2018 – Jul 2020', pt: 'nov 2018 – jul 2020' }, role: 'IT Infrastructure Specialist', context: { en: 'Cloud migrations', pt: 'Migrações cloud' } },
+    { company: 'F1 Tecnologia Corporativa', dates: { en: 'Jan 2016 – Nov 2018', pt: 'jan 2016 – nov 2018' }, role: 'Cloud Solutions Consultant', context: { en: 'Office 365 · Azure', pt: 'Office 365 · Azure' } },
+];
+
+// Small inline diagrams, one per case (labels are language-neutral)
+const CASE_DIAGRAMS = {
+    phased: `
+        <svg viewBox="0 0 320 180" aria-hidden="true">
+            <text class="cd-small" x="55" y="44">deps mapped ✓</text>
+            <rect class="cd-node" x="10" y="60" width="90" height="60" rx="3" /><text class="cd-label" x="55" y="94">legacy</text>
+            <rect class="cd-node cd-hot" x="220" y="60" width="90" height="60" rx="3" /><text class="cd-label" x="265" y="88">cloud</text><text class="cd-label" x="265" y="103">native</text>
+            <path class="cd-link" d="M100 72 H220 M100 90 H220 M100 108 H220" />
+            <text class="cd-small" x="160" y="68">phase 1</text><text class="cd-small" x="160" y="86">phase 2</text><text class="cd-small" x="160" y="104">phase 3</text>
+            <path class="cd-back" d="M220 128 C 185 160, 135 160, 100 128" /><text class="cd-small" x="160" y="172">auto rollback</text>
+        </svg>`,
+    blocks: `
+        <svg viewBox="0 0 320 180" aria-hidden="true">
+            <rect class="cd-node cd-hot" x="95" y="10" width="130" height="40" rx="3" /><text class="cd-label" x="160" y="34">building blocks</text>
+            <path class="cd-link" d="M160 50 V80 M50 80 H270 M50 80 V110 M160 80 V110 M270 80 V110" />
+            <rect class="cd-node" x="10" y="110" width="80" height="34" rx="3" /><text class="cd-label" x="50" y="131">squad a</text>
+            <rect class="cd-node" x="120" y="110" width="80" height="34" rx="3" /><text class="cd-label" x="160" y="131">squad b</text>
+            <rect class="cd-node" x="230" y="110" width="80" height="34" rx="3" /><text class="cd-label" x="270" y="131">squad c</text>
+            <text class="cd-small" x="160" y="170">helm · k8s · observability · guidelines</text>
+        </svg>`,
+    incident: `
+        <svg viewBox="0 0 320 180" aria-hidden="true">
+            <path class="cd-link" d="M160 30 L270 90 L160 150 L50 90 Z" />
+            <rect class="cd-node cd-hot" x="115" y="12" width="90" height="34" rx="3" /><text class="cd-label" x="160" y="33">detect</text>
+            <rect class="cd-node" x="225" y="73" width="90" height="34" rx="3" /><text class="cd-label" x="270" y="94">command</text>
+            <rect class="cd-node" x="115" y="134" width="90" height="34" rx="3" /><text class="cd-label" x="160" y="155">rca</text>
+            <rect class="cd-node" x="5" y="73" width="90" height="34" rx="3" /><text class="cd-label" x="50" y="94">prevent</text>
+            <text class="cd-small" x="160" y="94">learn, not blame</text>
+        </svg>`,
+};
+
+const CASES = [
     {
-        company: 'Bradesco',
-        dates: { en: 'Dec 2025 – Present', pt: 'dez 2025 – presente' },
-        role: { en: 'Senior Solutions Architect', pt: 'Senior Solutions Architect' },
-        context: { en: 'Auto Finance', pt: 'Financiamento de Veículos' },
-        bullets: {
-            en: ['Enterprise architecture for high-complexity initiatives: microservices, APIs, integration, data and legacy modernization.',
-                'Leads Azure and AWS cloud initiatives and architecture governance across cross-functional squads.'],
-            pt: ['Arquitetura corporativa para projetos de alta complexidade: microsserviços, APIs, integração, dados e modernização de legados.',
-                'Conduz iniciativas cloud em Azure e AWS e a governança arquitetural junto a squads multidisciplinares.'],
+        diagram: 'phased',
+        en: {
+            kicker: 'Critical legacy system · financial platform',
+            title: 'When the best decision was not to migrate — yet',
+            problem: 'Product wanted a fast move to cloud-native. My analysis showed hidden dependencies, cutover windows falling in peak periods and no observability in the current system.',
+            decision: 'I recommended pausing to map every dependency and running a phased migration — even at the cost of about three extra months. I took the data, the risks and an alternative plan to product, and they agreed.',
+            result: 'The migration ran in phases with <strong>zero downtime</strong> and automated rollback at every stage. Lesson: a hard decision is made with data, communicated clearly and owned — even when it isn\'t what people wanted to hear.',
+        },
+        pt: {
+            kicker: 'Sistema legado crítico · plataforma financeira',
+            title: 'Quando a melhor decisão foi não migrar — ainda',
+            problem: 'O produto queria migrar rápido para cloud-native. Minha análise mostrou dependências ocultas, janelas de cutover caindo em períodos de pico e nenhuma observabilidade no sistema atual.',
+            decision: 'Recomendei pausar para mapear todas as dependências e fazer uma migração faseada — mesmo custando cerca de três meses a mais. Levei os dados, os riscos e um plano alternativo ao produto, que aceitou.',
+            result: 'A migração aconteceu em fases, <strong>sem downtime</strong> e com rollback automático em todas as etapas. Aprendizado: decisão difícil se toma com dados, se comunica com clareza e se assume — mesmo quando não é o que as pessoas queriam ouvir.',
         },
     },
     {
-        company: 'Itaú Unibanco',
-        dates: { en: 'Apr 2022 – Nov 2025', pt: 'abr 2022 – nov 2025' },
-        role: { en: 'Senior Solutions Architect', pt: 'Senior Solutions Architect' },
-        context: { en: 'Business Banking · Merchant Acquiring', pt: 'Pessoa Jurídica · Adquirência' },
-        bullets: {
-            en: ['Reusable building blocks and Helm charts that cut time-to-market for new microservices by <strong>60%</strong>.',
-                'Architecture standards adopted by multiple squads; legacy modernization to event-driven with DDD and service mesh.',
-                'Mentored engineers and received the <strong>Mérito Ituber</strong> award for performance and cost reduction.'],
-            pt: ['Building blocks e Helm Charts reutilizáveis que reduziram em <strong>60%</strong> o time-to-market de novos microsserviços.',
-                'Padrões arquiteturais adotados por múltiplos squads; modernização de legados para event-driven com DDD e Service Mesh.',
-                'Mentorou engenheiros e recebeu o <strong>Mérito Ituber</strong> por performance e redução de custos.'],
+        diagram: 'blocks',
+        en: {
+            kicker: 'Business Banking & Acquiring · multiple squads',
+            title: 'From rebuilding every time to building blocks',
+            problem: 'Every new microservice meant each squad assembling its own deployment, resilience and observability setup — slow to start and inconsistent across teams.',
+            decision: 'I turned the common path into reusable building blocks and Helm charts on Kubernetes, backed by corporate guidelines based on AWS Well-Architected and the C4 model, so squads could start from a proven baseline.',
+            result: '<strong>60% shorter time-to-market</strong> for new microservices, with standards adopted by multiple squads.',
+        },
+        pt: {
+            kicker: 'Pessoa Jurídica e Adquirência · múltiplos squads',
+            title: 'De reconstruir toda vez a building blocks',
+            problem: 'Cada novo microsserviço fazia o squad montar do zero o próprio deploy, resiliência e observabilidade — lento para começar e inconsistente entre times.',
+            decision: 'Transformei o caminho comum em building blocks e Helm Charts reutilizáveis em Kubernetes, com guidelines corporativos baseados em AWS Well-Architected e C4 Model, para os squads partirem de uma base já validada.',
+            result: '<strong>Time-to-market 60% menor</strong> para novos microsserviços, com padrões adotados por múltiplos squads.',
         },
     },
     {
-        company: 'Itaú Unibanco',
-        dates: { en: 'Jul 2020 – Apr 2022', pt: 'jul 2020 – abr 2022' },
-        role: { en: 'Senior Systems Engineer — SRE', pt: 'Senior System Engineer — SRE' },
-        context: { en: 'Microsoft platforms', pt: 'Plataformas Microsoft' },
-        bullets: {
-            en: ['Cut onboarding time by <strong>40%</strong> by automating M365, Teams, SCCM and Intune.',
-                'Incident commander for critical outages, leading root-cause analysis and preventive actions.'],
-            pt: ['Reduziu em <strong>40%</strong> o tempo de onboarding automatizando M365, Teams, SCCM e Intune.',
-                'Incident commander em crises críticas, conduzindo análise de causa raiz e ações preventivas.'],
+        diagram: 'incident',
+        en: {
+            kicker: 'Critical Microsoft platforms · SRE',
+            title: 'Incident commander: from chaos to learning',
+            problem: 'Critical outages across Windows, VMware Horizon, RDS and Active Directory — the kind of incident where everyone is talking and nobody is deciding.',
+            decision: 'I took incident command: one channel, clear roles, structured root-cause analysis. And I treated every incident as shared learning for the team, never as a hunt for someone to blame.',
+            result: 'Structured preventive actions after each RCA and <strong>PowerShell and Python automation for SLIs/SLOs</strong> — plus a team that brought problems up early instead of hiding them.',
+        },
+        pt: {
+            kicker: 'Plataformas Microsoft críticas · SRE',
+            title: 'Incident commander: do caos ao aprendizado',
+            problem: 'Crises críticas em Windows, VMware Horizon, RDS e Active Directory — o tipo de incidente em que todo mundo fala e ninguém decide.',
+            decision: 'Assumi o comando do incidente: um canal, papéis claros, análise de causa raiz estruturada. E tratei cada incidente como aprendizado coletivo do time, nunca como caça ao culpado.',
+            result: 'Ações preventivas estruturadas após cada RCA e <strong>automações em PowerShell e Python para SLIs/SLOs</strong> — e um time que passou a levantar problemas cedo em vez de escondê-los.',
         },
     },
+];
+
+const PRINCIPLES = [
     {
-        company: 'V8 Consulting',
-        dates: { en: 'Nov 2018 – Jul 2020', pt: 'nov 2018 – jul 2020' },
-        role: { en: 'IT Infrastructure Specialist', pt: 'IT Infrastructure Specialist' },
-        context: { en: 'Enterprise consulting', pt: 'Consultoria enterprise' },
-        bullets: {
-            en: ['Datacenter migrations to AWS and Azure with minimal-downtime cutovers; hybrid connectivity with Direct Connect and ExpressRoute.'],
-            pt: ['Migrações de datacenters para AWS e Azure com cutovers de downtime mínimo; conectividade híbrida com Direct Connect e ExpressRoute.'],
-        },
+        en: ['Technical conflict usually has a human layer.', 'When two engineers disagree, I put the trade-offs on the table with data and let the decision emerge from the group. People who feel heard commit — even when they lose the argument.'],
+        pt: ['Conflito técnico quase sempre tem uma camada humana.', 'Quando dois engenheiros divergem, coloco os trade-offs na mesa com dados e deixo a decisão emergir do grupo. Quem se sente ouvido se compromete — mesmo quando perde o argumento.'],
     },
     {
-        company: 'F1 Tecnologia Corporativa',
-        dates: { en: 'Jan 2016 – Nov 2018', pt: 'jan 2016 – nov 2018' },
-        role: { en: 'Cloud Solutions Consultant', pt: 'Cloud Solutions Consultant' },
-        context: { en: 'Enterprise consulting', pt: 'Consultoria enterprise' },
-        bullets: {
-            en: ['Office 365 migrations, Azure IaaS adoption and System Center deployments for enterprise clients.'],
-            pt: ['Migrações para Office 365, adoção de Azure IaaS e implantação de System Center em clientes enterprise.'],
-        },
+        en: ['Development starts with where the person wants to go.', 'A development plan is just a document; what matters happens in the 1:1s. Instead of handing over answers, I bring the problem and ask: what would you do, and why?'],
+        pt: ['Desenvolvimento começa por onde a pessoa quer chegar.', 'O PDI é só o documento; o que importa acontece nos 1:1. Em vez de entregar a resposta pronta, trago o problema e pergunto: o que você faria, e por quê?'],
+    },
+    {
+        en: ['Tech debt is a business decision.', 'My job is to make it visible, quantify it in risk and cost, and plan it as a first-class item. A team that hides tech debt from the business is postponing a crisis, not solving a problem.'],
+        pt: ['Débito técnico é decisão de negócio.', 'Meu papel é torná-lo visível, quantificá-lo em risco e custo e planejá-lo como item de primeira classe. Time que esconde débito técnico do negócio está adiando uma crise, não resolvendo um problema.'],
+    },
+    {
+        en: ['Disagree with data, then commit.', 'I state my view once, clearly and in private. If the decision stands, I own it as if it were mine — a team can\'t follow a fragmented leadership. The only exception is ethics.'],
+        pt: ['Discordo com dados, depois me comprometo.', 'Exponho minha visão uma vez, com clareza e em particular. Se a decisão se mantém, assumo como minha — time não segue liderança fragmentada. A única exceção é ética.'],
     },
 ];
 
@@ -285,13 +352,43 @@ const renderCerts = () => {
 const renderExperience = () => {
     document.getElementById('timeline').innerHTML = EXPERIENCE
         .map((job) => `
-            <li class="job reveal visible">
+            <li class="job">
                 <div class="job-when">${job.dates[lang]}</div>
                 <div class="job-body">
-                    <h3 class="job-role">${job.role[lang]} <span class="accent">@ ${job.company}</span></h3>
+                    <h3 class="job-role">${job.role} <span class="accent">@ ${job.company}</span></h3>
                     <p class="job-context">${job.context[lang]}</p>
-                    <ul>${job.bullets[lang].map((b) => `<li>${b}</li>`).join('')}</ul>
                 </div>
+            </li>`)
+        .join('');
+};
+
+const renderCases = () => {
+    document.getElementById('cases-list').innerHTML = CASES
+        .map((c, i) => {
+            const text = c[lang];
+            return `
+            <article class="case frame">
+                <div class="case-text">
+                    <span class="case-kicker">${String(i + 1).padStart(2, '0')} · ${text.kicker}</span>
+                    <h3 class="case-title">${text.title}</h3>
+                    <dl>
+                        <dt>${t('case.problem')}</dt><dd>${text.problem}</dd>
+                        <dt>${t('case.decision')}</dt><dd>${text.decision}</dd>
+                        <dt>${t('case.result')}</dt><dd>${text.result}</dd>
+                    </dl>
+                </div>
+                <div class="case-diagram">${CASE_DIAGRAMS[c.diagram]}</div>
+            </article>`;
+        })
+        .join('');
+};
+
+const renderPrinciples = () => {
+    document.getElementById('principles').innerHTML = PRINCIPLES
+        .map((p) => `
+            <li class="principle frame">
+                <h3>${p[lang][0]}</h3>
+                <p>${p[lang][1]}</p>
             </li>`)
         .join('');
 };
@@ -308,8 +405,10 @@ const setLang = (next) => {
         btn.setAttribute('aria-pressed', String(btn.dataset.lang === lang));
     });
 
-    renderCerts();
+    renderCases();
+    renderPrinciples();
     renderExperience();
+    renderCerts();
     restartTyping();
 };
 

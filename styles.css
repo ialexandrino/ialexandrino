@@ -518,6 +518,146 @@ main,
     font-size: 1.05rem;
 }
 
+/* ---------- CASES ---------- */
+.cases {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.case {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+}
+
+.case-kicker {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+}
+
+.case-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.3rem, 2.6vw, 1.65rem);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    margin: 0.4rem 0 1.25rem;
+}
+
+.case dl {
+    display: grid;
+    grid-template-columns: 6.5rem 1fr;
+    gap: 0.75rem 1rem;
+    font-size: 0.88rem;
+}
+
+.case dt {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-top: 0.2rem;
+}
+
+.case dd {
+    color: var(--text-secondary);
+}
+
+.case dd strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+.case-diagram svg {
+    width: 100%;
+    height: auto;
+    font-family: var(--font-mono);
+}
+
+.cd-node {
+    fill: #0b1118;
+    stroke: var(--text-muted);
+}
+
+.cd-hot {
+    stroke: var(--accent);
+}
+
+.cd-link,
+.cd-back {
+    fill: none;
+    stroke: var(--accent);
+    stroke-opacity: 0.5;
+    stroke-dasharray: 5 5;
+    animation: flow 1.2s linear infinite;
+}
+
+.cd-back {
+    stroke: #fbbf24;
+    animation-direction: reverse;
+}
+
+.cd-label {
+    fill: var(--text-secondary);
+    font-size: 12px;
+    text-anchor: middle;
+}
+
+.cd-small {
+    fill: var(--text-muted);
+    font-size: 10px;
+    text-anchor: middle;
+}
+
+/* ---------- LEADERSHIP ---------- */
+.principles {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    counter-reset: principle;
+}
+
+.principle {
+    padding: 1.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    counter-increment: principle;
+}
+
+.principle::marker {
+    content: none;
+}
+
+.principle h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.15rem;
+    line-height: 1.35;
+    margin-bottom: 0.6rem;
+}
+
+.principle h3::before {
+    content: counter(principle, decimal-leading-zero);
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.principle p {
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+}
+
 /* ---------- EXPERIENCE ---------- */
 .timeline {
     list-style: none;
@@ -531,7 +671,7 @@ main,
     display: grid;
     grid-template-columns: 11rem 1fr;
     gap: 1.5rem;
-    padding: 0 0 2.25rem 1.75rem;
+    padding: 0 0 1.5rem 1.75rem;
 }
 
 .job::before {
@@ -570,32 +710,6 @@ main,
     letter-spacing: 0.08em;
     color: var(--text-muted);
     margin: 0.2rem 0 0.6rem;
-}
-
-.job-body ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-}
-
-.job-body li {
-    position: relative;
-    padding-left: 1.2rem;
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-}
-
-.job-body li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-}
-
-.job-body strong {
-    color: var(--text);
-    font-weight: 600;
 }
 
 .timeline-earlier {
@@ -818,8 +932,19 @@ main,
         grid-template-columns: 1fr;
     }
 
-    .cert-featured {
+    .cert-featured,
+    .case,
+    .principles {
         grid-template-columns: 1fr;
+    }
+
+    .case {
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .case-diagram {
+        max-width: 360px;
     }
 
     /* Not enough room beside the text: fade the diagram behind it */
@@ -876,6 +1001,15 @@ main,
 
     .timeline-earlier {
         margin-left: 1.65rem;
+    }
+
+    .case dl {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+    }
+
+    .case dd {
+        margin-bottom: 0.6rem;
     }
 
     .section {
