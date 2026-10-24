@@ -5,7 +5,7 @@ const I18N = {
         'nav.stack': 'Stack',
         'nav.certs': 'Certifications',
         'nav.connect': 'Contact',
-        'hero.label': '// cloud & infrastructure architect',
+        'hero.label': '// solutions architect · cloud & infrastructure',
         'hero.tagline': 'I design cloud infrastructure that stays up.',
         'hero.description': '15+ years taking systems from on-prem networks to AWS and Azure — designed to scale, automated with Terraform, and monitored before anything breaks.',
         'hero.ctaStack': 'See my stack',
@@ -33,14 +33,14 @@ const I18N = {
         'connect.title': 'Let\'s <span>talk</span>',
         'connect.text': 'Planning a migration, scaling an environment, or just want to talk cloud? My inbox is open.',
         'footer.built': 'Hand-built with HTML, CSS & a little JS.',
-        roles: ['Cloud Solutions Architect', 'AWS & Azure certified', 'Infrastructure as Code', 'Microsoft Certified Trainer'],
+        roles: ['Solutions Architect', 'AWS & Azure certified', 'Infrastructure as Code', 'Microsoft Certified Trainer'],
     },
     pt: {
         'nav.about': 'Sobre',
         'nav.stack': 'Stack',
         'nav.certs': 'Certificações',
         'nav.connect': 'Contato',
-        'hero.label': '// arquiteto de cloud & infraestrutura',
+        'hero.label': '// arquiteto de soluções · cloud & infraestrutura',
         'hero.tagline': 'Projeto infraestrutura em nuvem que não cai.',
         'hero.description': 'Mais de 15 anos levando sistemas de redes on-premises para AWS e Azure — projetados para escalar, automatizados com Terraform e monitorados antes que algo quebre.',
         'hero.ctaStack': 'Ver minha stack',
@@ -68,7 +68,7 @@ const I18N = {
         'connect.title': 'Vamos <span>conversar</span>',
         'connect.text': 'Planejando uma migração, escalando um ambiente ou só quer falar de cloud? Estou à disposição.',
         'footer.built': 'Feito à mão com HTML, CSS e um pouco de JS.',
-        roles: ['Arquiteto de Soluções Cloud', 'Certificado AWS & Azure', 'Infraestrutura como Código', 'Microsoft Certified Trainer'],
+        roles: ['Arquiteto de Soluções', 'Certificado AWS & Azure', 'Infraestrutura como Código', 'Microsoft Certified Trainer'],
     },
 };
 
@@ -395,6 +395,7 @@ window.addEventListener('mousemove', (e) => {
 }, { passive: true });
 
 // ========== INIT ==========
+if (reducedMotion) document.getElementById('hero-diagram').pauseAnimations();
 setLang(lang);
 resize();
 requestAnimationFrame(draw);

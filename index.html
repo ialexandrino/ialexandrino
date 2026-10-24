@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Ivan Alexandrino — Cloud & Infrastructure Architect. 15+ years designing highly available infrastructure on AWS and Azure.">
-    <meta property="og:title" content="Ivan Alexandrino | Cloud & Infrastructure Architect">
+        content="Ivan Alexandrino — Solutions Architect (cloud & infrastructure). 15+ years designing highly available infrastructure on AWS and Azure.">
+    <meta property="og:title" content="Ivan Alexandrino | Solutions Architect">
     <meta property="og:description" content="I design cloud infrastructure that stays up. AWS · Azure · Terraform · Kubernetes.">
     <meta property="og:type" content="website">
-    <title>Ivan Alexandrino | Cloud Architect</title>
+    <title>Ivan Alexandrino | Solutions Architect</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,6 +45,67 @@
     <main>
         <!-- ======== HERO ======== -->
         <section class="hero" id="hero">
+            <!-- Reference HA architecture: edge → load balancer → 2 AZs (app, cache, db) -->
+            <svg class="hero-diagram" id="hero-diagram" viewBox="0 0 480 660" aria-hidden="true">
+                <defs>
+                    <path id="route-a" d="M240 33 V193 L135 300 V500" />
+                    <path id="route-b" d="M240 33 V193 L345 300 V500" />
+                </defs>
+
+                <g class="d-zone">
+                    <rect x="20" y="150" width="440" height="470" rx="6" />
+                    <rect x="40" y="250" width="190" height="350" rx="4" />
+                    <rect x="250" y="250" width="190" height="350" rx="4" />
+                </g>
+                <g class="d-zone-label">
+                    <text x="32" y="168">vpc · 10.0.0.0/16</text>
+                    <text x="52" y="268">az-a</text>
+                    <text x="262" y="268">az-b</text>
+                </g>
+
+                <g class="d-link">
+                    <use href="#route-a" />
+                    <use href="#route-b" />
+                    <path d="M205 500 H275" class="d-repl" />
+                </g>
+
+                <g class="d-packets">
+                    <circle r="3"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#route-a" /></animateMotion></circle>
+                    <circle r="3"><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite"><mpath href="#route-b" /></animateMotion></circle>
+                    <circle r="3"><animateMotion dur="3.2s" begin="0.8s" repeatCount="indefinite"><mpath href="#route-b" /></animateMotion></circle>
+                    <circle r="3"><animateMotion dur="3.2s" begin="2.4s" repeatCount="indefinite"><mpath href="#route-a" /></animateMotion></circle>
+                </g>
+
+                <g class="d-node">
+                    <rect x="180" y="15" width="120" height="36" rx="3" />
+                    <rect x="150" y="85" width="180" height="36" rx="3" />
+                    <rect x="160" y="175" width="160" height="36" rx="3" />
+                    <rect x="65" y="280" width="140" height="40" rx="3" />
+                    <rect x="275" y="280" width="140" height="40" rx="3" />
+                    <rect x="65" y="380" width="140" height="40" rx="3" />
+                    <rect x="275" y="380" width="140" height="40" rx="3" />
+                    <rect x="65" y="480" width="140" height="40" rx="3" />
+                    <rect x="275" y="480" width="140" height="40" rx="3" />
+                </g>
+                <g class="d-label">
+                    <text x="240" y="37">users</text>
+                    <text x="240" y="107">dns · cdn · waf</text>
+                    <text x="240" y="197">load balancer</text>
+                    <text x="135" y="304">app · k8s</text>
+                    <text x="345" y="304">app · k8s</text>
+                    <text x="135" y="404">cache</text>
+                    <text x="345" y="404">cache</text>
+                    <text x="135" y="504">db primary</text>
+                    <text x="345" y="504">db replica</text>
+                </g>
+                <g class="d-zone-label">
+                    <text x="240" y="494" text-anchor="middle">sync</text>
+                    <text x="52" y="584">auto scaling ⟳</text>
+                    <text x="262" y="584">auto scaling ⟳</text>
+                    <text x="20" y="648">terraform · prometheus · grafana</text>
+                </g>
+            </svg>
+
             <div class="hero-inner">
                 <p class="hero-label" data-i18n="hero.label"></p>
                 <h1 class="hero-name">Ivan<br>Alexandrino</h1>

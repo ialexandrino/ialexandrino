@@ -221,6 +221,81 @@ main,
     padding: calc(var(--nav-height) + 2rem) var(--gutter) 4rem;
     max-width: var(--max-width);
     margin: 0 auto;
+    position: relative;
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- HERO DIAGRAM ---------- */
+.hero-diagram {
+    position: absolute;
+    right: var(--gutter);
+    top: 50%;
+    width: min(440px, 38vw);
+    transform: translateY(-45%);
+    opacity: 0;
+    animation: diagramIn 1.4s var(--ease) 0.5s forwards;
+    pointer-events: none;
+}
+
+.hero-diagram text {
+    font-family: var(--font-mono);
+}
+
+.d-zone rect {
+    fill: none;
+    stroke: var(--text-muted);
+    stroke-width: 1;
+    stroke-dasharray: 4 5;
+}
+
+.d-zone-label text {
+    fill: var(--text-muted);
+    font-size: 11px;
+}
+
+.d-link use,
+.d-link path {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.2;
+    stroke-opacity: 0.45;
+    stroke-dasharray: 6 6;
+    animation: flow 1.2s linear infinite;
+}
+
+.d-link .d-repl {
+    stroke-dasharray: 2 4;
+}
+
+.d-packets circle {
+    fill: var(--accent);
+    filter: drop-shadow(0 0 4px var(--accent));
+}
+
+.d-node rect {
+    fill: var(--bg-card);
+    stroke: var(--accent);
+    stroke-width: 1;
+    stroke-opacity: 0.55;
+}
+
+.d-label text {
+    fill: var(--text-secondary);
+    font-size: 12px;
+    text-anchor: middle;
+}
+
+@keyframes flow {
+    to { stroke-dashoffset: -12; }
+}
+
+@keyframes diagramIn {
+    from { opacity: 0; transform: translateY(-42%); }
+    to { opacity: 0.85; transform: translateY(-45%); }
 }
 
 .hero-inner > * {
@@ -660,6 +735,15 @@ main,
     .cert-featured {
         grid-template-columns: 1fr;
     }
+
+    /* Not enough room beside the text: fade the diagram behind it */
+    .hero-diagram {
+        right: 50%;
+        width: min(440px, 92vw);
+        transform: translate(50%, -45%);
+        animation: none;
+        opacity: 0.14;
+    }
 }
 
 @media (max-width: 768px) {
@@ -721,5 +805,15 @@ main,
     .reveal {
         opacity: 1;
         transform: none;
+    }
+
+    .hero-diagram {
+        opacity: 0.85;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 900px) {
+    .hero-diagram {
+        opacity: 0.14;
     }
 }
