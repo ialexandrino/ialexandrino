@@ -78,11 +78,11 @@ const I18N = {
 
 // ========== CONTENT ==========
 const CAREER = [
-    { when: { en: '2025 – now', pt: '2025 – hoje' }, role: 'Senior Solutions Architect', where: { en: 'Bradesco · Auto Finance', pt: 'Bradesco · Financiamento de Veículos' } },
-    { when: { en: '2022 – 2025', pt: '2022 – 2025' }, role: 'Senior Solutions Architect', where: { en: 'Itaú Unibanco · Business Banking & Acquiring', pt: 'Itaú Unibanco · PJ e Adquirência' } },
-    { when: { en: '2020 – 2022', pt: '2020 – 2022' }, role: 'Senior Systems Engineer — SRE', where: { en: 'Itaú Unibanco · Microsoft platforms', pt: 'Itaú Unibanco · Plataformas Microsoft' } },
-    { when: { en: '2018 – 2020', pt: '2018 – 2020' }, role: 'IT Infrastructure Specialist', where: { en: 'V8 Consulting · Cloud migrations', pt: 'V8 Consulting · Migrações cloud' } },
-    { when: { en: '2016 – 2018', pt: '2016 – 2018' }, role: 'Cloud Solutions Consultant', where: { en: 'F1 Tecnologia · Office 365 & Azure', pt: 'F1 Tecnologia · Office 365 e Azure' } },
+    { when: { en: '2025 – now', pt: '2025 – hoje' }, role: { en: 'Senior Solutions Architect', pt: 'Arquiteto de Soluções Sênior' }, where: { en: 'Bradesco · Auto Finance', pt: 'Bradesco · Financiamento de Veículos' } },
+    { when: { en: '2022 – 2025', pt: '2022 – 2025' }, role: { en: 'Senior Solutions Architect', pt: 'Arquiteto de Soluções Sênior' }, where: { en: 'Itaú Unibanco · Business Banking & Acquiring', pt: 'Itaú Unibanco · PJ e Adquirência' } },
+    { when: { en: '2020 – 2022', pt: '2020 – 2022' }, role: { en: 'Senior Engineering Analyst (SRE)', pt: 'Analista de Engenharia Sênior (SRE)' }, where: { en: 'Itaú Unibanco · Mission-critical platforms', pt: 'Itaú Unibanco · Plataformas de missão crítica' } },
+    { when: { en: '2018 – 2020', pt: '2018 – 2020' }, role: { en: 'IT Infrastructure Specialist', pt: 'Especialista em Infraestrutura de TI' }, where: { en: 'V8 Consulting · Cloud migrations', pt: 'V8 Consulting · Migrações cloud' } },
+    { when: { en: '2016 – 2018', pt: '2016 – 2018' }, role: { en: 'IT Solutions Consultant (contract)', pt: 'Consultor de Soluções de TI (PJ)' }, where: { en: 'F1 Tecnologia · Azure & Office 365', pt: 'F1 Tecnologia · Azure e Office 365' } },
     { when: { en: '2010 – 2018', pt: '2010 – 2018' }, role: { en: 'Microsoft infrastructure', pt: 'Infraestrutura Microsoft' }, where: { en: 'Algar Tech, Sompo Seguros, Ascenty and others', pt: 'Algar Tech, Sompo Seguros, Ascenty e outras' } },
 ];
 
@@ -90,7 +90,7 @@ const EDUCATION = [
     { when: '2025 – 2026', what: { en: 'Postgraduate, Tech Management', pt: 'Pós-graduação em Tech Management' }, where: 'FIAP' },
     { when: '2024', what: 'Executive Leadership Training', where: 'Ibmec' },
     { when: '2022 – 2023', what: { en: 'Postgraduate, Solutions Architecture', pt: 'Pós-graduação em Arquitetura de Soluções' }, where: 'PUC Minas' },
-    { when: '2016 – 2017', what: { en: 'Computer Networks', pt: 'Redes de Computadores' }, where: 'UNIP' },
+    { when: '2016 – 2018', what: { en: 'Associate degree, Computer Networks', pt: 'Tecnólogo em Redes de Computadores' }, where: 'UNIP' },
     { when: '2009 – 2010', what: { en: 'IT Technician', pt: 'Técnico em Informática' }, where: 'Senac' },
 ];
 
@@ -105,10 +105,16 @@ const SKILL_GROUPS = [
         items: ['RAG', 'AI Agents', 'Harness Engineering', 'MCP', 'Spec-Driven Development', 'LangChain', 'Claude Code'],
     },
     { title: { en: 'Languages & frameworks', pt: 'Linguagens e frameworks' }, items: ['Python (FastAPI)', 'TypeScript', 'Node.js', 'Next.js', 'Go', 'PowerShell', 'Bash'] },
-    { title: { en: 'Architecture', pt: 'Arquitetura' }, items: ['Microservices', 'Event-driven', 'DDD', 'Service Mesh', 'API design', 'C4 model', 'Well-Architected'] },
+    { title: { en: 'Architecture', pt: 'Arquitetura' }, items: ['Microservices', 'Event-driven', 'DDD', 'Service Mesh', 'API design', 'Cloud Design Patterns', 'C4 model', 'Well-Architected'] },
+    {
+        title: { en: 'Governance & cost', pt: 'Governança e custos' },
+        items: {
+            en: ['ADR', 'ArchiMate (Ardoq)', 'Non-functional requirements', 'Reference architecture', 'FinOps'],
+            pt: ['ADR', 'ArchiMate (Ardoq)', 'Requisitos não funcionais', 'Arquitetura de referência', 'FinOps'],
+        },
+    },
     { title: { en: 'Cloud', pt: 'Cloud' }, items: ['AWS', 'Azure', 'EKS · AKS', 'Lambda', 'Direct Connect', 'ExpressRoute', 'Multi-cloud'] },
-    { title: { en: 'Platform', pt: 'Plataforma' }, items: ['Kubernetes', 'Docker', 'Helm', 'ArgoCD', 'Terraform', 'Ansible', 'GitHub Actions'] },
-    { title: { en: 'Reliability', pt: 'Confiabilidade' }, items: ['SRE', 'SLOs / SLIs', 'Prometheus', 'Grafana', 'Datadog', 'Splunk'] },
+    { title: { en: 'Platform & reliability', pt: 'Plataforma e confiabilidade' }, items: ['Kubernetes', 'Docker', 'Helm', 'ArgoCD', 'Terraform', 'GitHub Actions', 'SRE', 'SLOs / SLIs', 'Prometheus', 'Grafana', 'Datadog'] },
     { title: { en: 'Leadership', pt: 'Liderança' }, items: { en: ['Mentoring', 'Development plans', '1:1s', 'Management 3.0', 'OKRs', 'Scrum'], pt: ['Mentoria', 'PDI', '1:1', 'Management 3.0', 'OKRs', 'Scrum'] } },
 ];
 

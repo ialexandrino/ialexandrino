@@ -18,7 +18,8 @@ Solutions architect with 15 years in technology, the last 6 at large banks. I st
 |---|---|
 | **Applied AI** | RAG, AI agents, harness engineering, MCP, spec-driven development, LangChain, Claude Code |
 | **Languages & frameworks** | Python (FastAPI), TypeScript, Node.js, Next.js, Go, PowerShell, Bash |
-| **Architecture** | Microservices, event-driven, DDD, service mesh, API design, C4 model, Well-Architected |
+| **Architecture** | Microservices, event-driven, DDD, service mesh, API design, cloud design patterns, C4 model, Well-Architected |
+| **Governance & cost** | ADR, ArchiMate (Ardoq), non-functional requirements, reference architecture, FinOps |
 | **Cloud** | AWS (EKS, Lambda, Direct Connect), Azure (AKS, ExpressRoute), multi-cloud and hybrid |
 | **Platform** | Kubernetes, Docker, Helm, ArgoCD, Terraform, Ansible, GitHub Actions |
 | **Reliability** | SRE, SLOs/SLIs, Prometheus, Grafana, Datadog, Splunk |
