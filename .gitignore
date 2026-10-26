@@ -5,5 +5,8 @@
 *.odt
 *.rtf
 
+# Private screenshots (e.g. LinkedIn profile reviews)
+prints/
+
 # Office lock/temp files
 ~$*
