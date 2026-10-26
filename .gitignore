@@ -1,4 +1,5 @@
-# Private documents (resumes, cover letters) — never publish
+# Private documents (resumes, cover letters, profile exports) — never publish
+curriculos/
 *.docx
 *.doc
 *.pdf

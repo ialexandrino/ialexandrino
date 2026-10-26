@@ -28,8 +28,9 @@ const I18N = {
         'skills.lead': 'What I use day to day — and the certifications that back it up.',
         'certs.all': 'See all {n} certifications',
         'certs.featured.aws': 'The highest-level AWS architecture certification.',
-        'certs.featured.azure': 'Microsoft\'s expert-level Azure architecture certification.',
         'certs.featured.kcna': 'Kubernetes and the cloud-native ecosystem, by the Linux Foundation.',
+        'certs.featured.github': 'Git, GitHub and collaborative development workflows.',
+        'certs.verify': 'Verify credential',
         'certs.group.leadership': 'Leadership & Agile',
         'certs.group.other': 'Other',
         'contact.label': 'Contact',
@@ -63,8 +64,9 @@ const I18N = {
         'skills.lead': 'O que eu uso no dia a dia — e as certificações que sustentam isso.',
         'certs.all': 'Ver todas as {n} certificações',
         'certs.featured.aws': 'A certificação de arquitetura de mais alto nível da AWS.',
-        'certs.featured.azure': 'A certificação de arquitetura Azure de nível expert da Microsoft.',
         'certs.featured.kcna': 'Kubernetes e o ecossistema cloud-native, pela Linux Foundation.',
+        'certs.featured.github': 'Git, GitHub e fluxos de desenvolvimento colaborativo.',
+        'certs.verify': 'Ver credencial',
         'certs.group.leadership': 'Liderança & Agilidade',
         'certs.group.other': 'Outras',
         'contact.label': 'Contato',
@@ -116,13 +118,13 @@ const CERT_GROUPS = [
     {
         vendor: 'Microsoft',
         certs: [
-            'Azure Solutions Architect Expert', 'Azure Administrator Associate', 'Microsoft Certified Trainer (MCT)',
+            'Azure Solutions Architect Expert (2021 – 2023)', 'Azure Administrator Associate (2021 – 2024)', 'Microsoft Certified Trainer (MCT) Alumni',
             'MCSE: Cloud Platform and Infrastructure', 'MCSE: Private Cloud', 'MCSE: Core Infrastructure',
             'MCSA: Windows Server 2008 & 2012', '70-243 SCCM 2012', '70-346 Office 365 Identities', '74-409 Server Virtualization',
         ],
     },
-    { vendor: 'VMware', certs: ['VCP – Data Center Virtualization 2019'] },
-    { vendor: 'leadership', certs: ['Management 3.0 Foundation', 'DevOps Essentials Professional', 'Scrum Foundation Professional'] },
+    { vendor: 'VMware', certs: ['VCP – Data Center Virtualization 2019 (2019 – 2026)'] },
+    { vendor: 'leadership', certs: ['Management 3.0 Foundation', 'Digital Product Leadership — Tera', 'DevOps Essentials Professional', 'Scrum Foundation Professional (2020 – 2022)'] },
     {
         vendor: 'other',
         certs: ['Arquitetura de Soluções Foundation — Itaú', 'Alibaba Cloud Fundamentals', 'Snow Software Administrator', 'STS Altiris CMS 7.1', 'STS Symantec Management Platform 7.1'],
@@ -130,9 +132,18 @@ const CERT_GROUPS = [
 ];
 
 const FEATURED_CERTS = [
-    { vendor: 'AWS', name: 'Solutions Architect – Professional', note: 'certs.featured.aws', badge: 'assets/badges/aws-sa-pro.png' },
-    { vendor: 'Microsoft', name: 'Azure Solutions Architect Expert', note: 'certs.featured.azure', badge: 'assets/badges/azure-sa-expert.png' },
-    { vendor: 'Linux Foundation', name: 'Kubernetes and Cloud Native Associate', note: 'certs.featured.kcna', badge: 'assets/badges/kcna.png' },
+    {
+        vendor: 'AWS', name: 'Solutions Architect – Professional', note: 'certs.featured.aws', badge: 'assets/badges/aws-sa-pro.png',
+        url: 'https://www.credly.com/badges/5092baee-722a-49e5-9a3f-2d0270ac069d/public_url',
+    },
+    {
+        vendor: 'Linux Foundation', name: 'Kubernetes and Cloud Native Associate', note: 'certs.featured.kcna', badge: 'assets/badges/kcna.png',
+        url: 'https://www.credly.com/badges/725e8fe2-39d9-4df7-ba93-78cd1a0ace13/public_url',
+    },
+    {
+        vendor: 'GitHub', name: 'GitHub Foundations', note: 'certs.featured.github', badge: 'assets/badges/github-foundations.png',
+        url: 'https://www.credly.com/badges/68aa7aa9-5fe4-4be0-8fac-0ead22bee61e/public_url',
+    },
 ];
 
 const CERT_COUNT = CERT_GROUPS.reduce((n, g) => n + g.certs.length, 0);
@@ -179,6 +190,7 @@ const render = () => {
                 <span class="cert-vendor">${c.vendor}</span>
                 <h3 class="cert-name">${c.name}</h3>
                 <p>${t(c.note)}</p>
+                <a class="cert-verify" href="${c.url}" target="_blank" rel="noopener">${t('certs.verify')} ↗</a>
             </div>
         </article>`).join(''));
 

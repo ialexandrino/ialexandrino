@@ -10,7 +10,7 @@ Solutions architect with 15 years in technology, the last 6 at large banks. I st
 
 - 📉 **60%** less time-to-market for new microservices with reusable building blocks and Helm charts
 - ⚡ **40%** less onboarding time through automation
-- 🏅 **24** certifications across AWS, Azure, Kubernetes and more
+- 🏅 **25** certifications across AWS, Azure, Kubernetes and more
 
 ## Stack
 
@@ -26,16 +26,16 @@ Solutions architect with 15 years in technology, the last 6 at large banks. I st
 
 ## Certifications
 
-**Highlights:** AWS Certified Solutions Architect – Professional · Microsoft Certified: Azure Solutions Architect Expert · KCNA: Kubernetes and Cloud Native Associate
+**Active:** [AWS Certified Solutions Architect – Professional](https://www.credly.com/badges/5092baee-722a-49e5-9a3f-2d0270ac069d/public_url) · [KCNA: Kubernetes and Cloud Native Associate](https://www.credly.com/badges/725e8fe2-39d9-4df7-ba93-78cd1a0ace13/public_url) · [GitHub Foundations](https://www.credly.com/badges/68aa7aa9-5fe4-4be0-8fac-0ead22bee61e/public_url)
 
 <details>
 <summary>All certifications</summary>
 
 - **AWS:** Solutions Architect – Professional, Solutions Architect – Associate, Cloud Practitioner
 - **Linux Foundation · GitHub:** KCNA, GitHub Foundations
-- **Microsoft:** Azure Solutions Architect Expert, Azure Administrator Associate, Microsoft Certified Trainer (MCT), MCSE: Cloud Platform and Infrastructure, MCSE: Private Cloud, MCSE: Core Infrastructure, MCSA: Windows Server 2008 & 2012, 70-243, 70-346, 74-409
-- **VMware:** VCP – Data Center Virtualization 2019
-- **Leadership & Agile:** Management 3.0 Foundation, DevOps Essentials Professional, Scrum Foundation Professional
+- **Microsoft:** Azure Solutions Architect Expert (2021 – 2023), Azure Administrator Associate (2021 – 2024), Microsoft Certified Trainer (MCT) Alumni, MCSE: Cloud Platform and Infrastructure, MCSE: Private Cloud, MCSE: Core Infrastructure, MCSA: Windows Server 2008 & 2012, 70-243, 70-346, 74-409
+- **VMware:** VCP – Data Center Virtualization 2019 (2019 – 2026)
+- **Leadership & Agile:** Management 3.0 Foundation, Digital Product Leadership (Tera), DevOps Essentials Professional, Scrum Foundation Professional (2020 – 2022)
 - **Other:** Arquitetura de Soluções Foundation (Itaú), Alibaba Cloud Fundamentals, Snow Software Administrator, STS Altiris CMS 7.1, STS Symantec Management Platform 7.1
 
 </details>
